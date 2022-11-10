@@ -1,11 +1,20 @@
-import './App.css';
+import React from 'react';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-function App() {
+const App = () => {
+
   return (
     <div>
-      <h1>Student Management System</h1>
+      
+    <Switch>
+      <Route path='/login' component={Login} />
+      <Route path='/signup' component={SignUp} />
+      <Redirect from='/' to='/login' />
+    </Switch>
     </div>
   );
-}
+};
 
 export default App;
